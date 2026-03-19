@@ -1,0 +1,48 @@
+{
+  "name": "focusflow-icons",
+  "description": "番茄钟与网页统计 Chrome 插件图标集",
+  "preset": "clean",
+  "grid": 24,
+  "strokeWidth": 1.5,
+  "strokeLinecap": "round",
+  "strokeLinejoin": "round",
+  "cornerRadius": 2,
+  "padding": 2,
+  "opticalBalance": true,
+  "iconCount": 20,
+  "icons": [
+    "logo",
+    "timer",
+    "play",
+    "pause",
+    "reset",
+    "check",
+    "chart-bar",
+    "chart-pie",
+    "calendar",
+    "website",
+    "settings",
+    "menu",
+    "close",
+    "plus",
+    "minus",
+    "edit",
+    "delete",
+    "focus",
+    "time",
+    "arrow-left",
+    "arrow-right"
+  ],
+  "themeSupport": {
+    "light": {
+      "color": "#1a1a2e",
+      "background": "#ffffff"
+    },
+    "dark": {
+      "color": "#f0f0f5",
+      "background": "#0a0a0f"
+    }
+  },
+  "generated": "2026-03-19",
+  "version": "1.0.0"
+}
