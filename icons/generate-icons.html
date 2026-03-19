@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Icons</title>
+</head>
+<body>
+  <canvas id="icon16" width="16" height="16"></canvas>
+  <canvas id="icon32" width="32" height="32"></canvas>
+  <canvas id="icon48" width="48" height="48"></canvas>
+  <canvas id="icon128" width="128" height="128"></canvas>
+  
+  <script>
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+      const center = size / 2;
+      const radius = size * 0.4;
+      const lineWidth = Math.max(2, size * 0.08);
+      
+      // Background
+      ctx.fillStyle = '#0a0a0f';
+      ctx.fillRect(0, 0, size, size);
+      
+      // Outer circle
+      ctx.strokeStyle = '#ff6b4a';
+      ctx.lineWidth = lineWidth;
+      ctx.beginPath();
+      ctx.arc(center, center, radius, 0, Math.PI * 2);
+      ctx.stroke();
+      
+      // Clock hands
+      ctx.strokeStyle = '#f0f0f5';
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = 'round';
+      
+      // Hour hand (pointing up)
+      ctx.beginPath();
+      ctx.moveTo(center, center);
+      ctx.lineTo(center, center - radius * 0.5);
+      ctx.stroke();
+      
+      // Minute hand (pointing right)
+      ctx.beginPath();
+      ctx.moveTo(center, center);
+      ctx.lineTo(center + radius * 0.6, center);
+      ctx.stroke();
+      
+      // Center dot
+      ctx.fillStyle = '#ff6b4a';
+      ctx.beginPath();
+      ctx.arc(center, center, lineWidth * 0.6, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Download link
+      const link = document.createElement('a');
+      link.download = `icon${size}.png`;
+      link.href = canvas.toDataURL();
+      link.textContent = `Download ${size}x${size}`;
+      document.body.appendChild(link);
+      document.body.appendChild(document.createElement('br'));
+    }
+    
+    drawIcon(document.getElementById('icon16'), 16);
+    drawIcon(document.getElementById('icon32'), 32);
+    drawIcon(document.getElementById('icon48'), 48);
+    drawIcon(document.getElementById('icon128'), 128);
+  </script>
+</body>
+</html>
